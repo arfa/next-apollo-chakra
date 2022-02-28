@@ -10,12 +10,17 @@ import {
   ListIcon,
   ListItem,
   Stack,
+  Stat,
+  StatArrow,
+  StatGroup,
+  StatHelpText,
+  StatLabel,
+  StatNumber,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { SmallAddIcon } from '@chakra-ui/icons';
-import getUnicodeFlagIcon from 'country-flag-icons/unicode'
-
+import getUnicodeFlagIcon from 'country-flag-icons/unicode';
 
 import React from 'react';
 
@@ -82,19 +87,20 @@ export const PlayerOverview = ({
           <Text fontWeight={600} color={'gray.500'} size='sm' mb={4}>
             {`${shortName} (${countryCode})`}
           </Text>
+          <StatGroup>
+            {last.map((stat, idx) => (
+              <Stat key={`stat-${idx}`}>
+                <StatHelpText>
+                  <StatArrow type={stat ? 'increase' : 'decrease'} />
+                </StatHelpText>
+              </Stat>
+            ))}
+          </StatGroup>
           <Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
-            <Badge
-              px={2}
-              py={1}
-              bg={useColorModeValue('blue.50', 'blue.800')}
-              fontWeight={'400'}>
+            <Badge px={2} py={1} bg={useColorModeValue('blue.50', 'blue.800')} fontWeight={'400'}>
               {`${rank}th`}
             </Badge>
-            <Badge
-              px={2}
-              py={1}
-              bg={useColorModeValue('blue.50', 'blue.800')}
-              fontWeight={'400'}>
+            <Badge px={2} py={1} bg={useColorModeValue('blue.50', 'blue.800')} fontWeight={'400'}>
               {`${points} points`}
             </Badge>
           </Stack>
