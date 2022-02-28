@@ -113,7 +113,7 @@ export const PlayerOverview = ({
             </ListItem>
             <ListItem>
               <ListIcon as={SmallAddIcon} color='green.500' />
-              {`${weight/1000} kg`}
+              {`${weight} kg`}
             </ListItem>
           </List>
         </Stack>

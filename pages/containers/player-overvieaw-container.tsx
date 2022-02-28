@@ -71,7 +71,7 @@ export const PlayerOverviewContainer = () => {
         sex={player?.sex}
         shortName={player?.shortname}
         height={player?.stats?.height}
-        weight={player?.stats?.weight}
+        weight={player?.stats?.weight || '_'}
         points={player?.stats?.points}
         last={player?.stats?.last}
         age={player?.stats?.age}
