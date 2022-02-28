@@ -65,11 +65,11 @@ export const PlayerOverviewContainer = () => {
         key={`${player.firstname}-${player.lastname}`}
         countryCode={player?.country?.code}
         countryUrl={player?.country?.url}
-        firstName={player?.firstName}
-        lastName={player?.lastName}
+        firstName={player?.firstname}
+        lastName={player?.lastname}
         picture={player?.picture?.url}
-        sexe={player?.sexe}
-        shortName={player?.shortName}
+        sex={player?.sex}
+        shortName={player?.shortname}
         height={player?.stats?.height}
         weight={player?.stats?.weight}
         points={player?.stats?.points}

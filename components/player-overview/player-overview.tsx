@@ -25,7 +25,7 @@ interface PlayerOverviewProps {
   countryUrl: string;
   countryCode: string;
   picture: string;
-  sexe: string;
+  sex: string;
   shortName: string;
   rank: number;
   age: number;
@@ -44,7 +44,7 @@ export const PlayerOverview = ({
   countryUrl,
   countryCode = 'fr',
   picture,
-  sexe,
+  sex,
   shortName,
   rank,
   age,
@@ -85,7 +85,7 @@ export const PlayerOverview = ({
           <List spacing={3}>
             <ListItem>
               <ListIcon as={MdCheckCircle} color='green.500' />
-              {sexe}
+              {sex}
             </ListItem>
             <ListItem>
               <ListIcon as={MdCheckCircle} color='green.500' />
