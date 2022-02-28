@@ -1,7 +1,7 @@
 import { useQuery, gql } from '@apollo/client';
 
 import React from 'react';
-import { PlayerOverview } from '../../components/player-overview/player-overview';
+import { PlayerOverview } from '../components/player-overview/player-overview';
 
 const ATHELETE_LIST = gql`
   query GetAtheleteList {
