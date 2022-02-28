@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
+          <Button colorScheme='blue'>Button</Button>
         </p>
 
         <div className={styles.grid}>
