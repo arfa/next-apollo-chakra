@@ -40,9 +40,13 @@ interface PlayerOverviewProps {
   last: boolean[];
 }
 
-/**
- * Primary UI component for user interaction
- */
+const mapCoutryCode = (countryCode: string) => {
+  if (countryCode.toLowerCase() === 'sui') {
+    return 'ch';
+  }
+  return countryCode;
+};
+
 export const PlayerOverview = ({
   firstName,
   lastName,
@@ -82,7 +86,7 @@ export const PlayerOverview = ({
           pt={2}
         >
           <Heading fontSize={'2xl'} fontFamily={'body'}>
-            {firstName} {lastName} - {getUnicodeFlagIcon(countryCode)}
+            {firstName} {lastName} - {getUnicodeFlagIcon(mapCoutryCode(countryCode))}
           </Heading>
           <Text fontWeight={600} color={'gray.500'} size='sm' mb={4}>
             {`${shortName} (${countryCode})`}
@@ -105,22 +109,30 @@ export const PlayerOverview = ({
             </Badge>
           </Stack>
           <List spacing={3}>
-            <ListItem>
-              <ListIcon as={SmallAddIcon} color='green.500' />
-              {sex}
-            </ListItem>
-            <ListItem>
-              <ListIcon as={SmallAddIcon} color='green.500' />
-              {`${age} years old`}
-            </ListItem>
-            <ListItem>
-              <ListIcon as={SmallAddIcon} color='green.500' />
-              {`${height} cm`}
-            </ListItem>
-            <ListItem>
-              <ListIcon as={SmallAddIcon} color='green.500' />
-              {`${weight} kg`}
-            </ListItem>
+            {sex && (
+              <ListItem>
+                <ListIcon as={SmallAddIcon} color='green.500' />
+                {sex}
+              </ListItem>
+            )}
+            {age && (
+              <ListItem>
+                <ListIcon as={SmallAddIcon} color='green.500' />
+                {`${age} years old`}
+              </ListItem>
+            )}
+            {height && (
+              <ListItem>
+                <ListIcon as={SmallAddIcon} color='green.500' />
+                {`${height} cm`}
+              </ListItem>
+            )}
+            {weight && (
+              <ListItem>
+                <ListIcon as={SmallAddIcon} color='green.500' />
+                {`${weight} kg`}
+              </ListItem>
+            )}
           </List>
         </Stack>
       </Stack>

@@ -3,22 +3,6 @@ import { useQuery, gql } from '@apollo/client';
 import React from 'react';
 import { PlayerOverview } from '../../components/player-overview/player-overview';
 
-interface PlayerOverviewProps {
-  firstName: string;
-  lastName: string;
-  countryUrl: string;
-  countryCode: string;
-  picture: string;
-  sexe: string;
-  shortName: string;
-  rank: number;
-  age: number;
-  height: number;
-  weight: number;
-  points: number;
-  last: boolean[];
-}
-
 const ATHELETE_LIST = gql`
   query GetAtheleteList {
     headToHead {
@@ -71,7 +55,7 @@ export const PlayerOverviewContainer = () => {
         sex={player?.sex}
         shortName={player?.shortname}
         height={player?.stats?.height}
-        weight={player?.stats?.weight || '_'}
+        weight={Number.isInteger(player?.stats?.weight) ? player?.stats?.weight/1000 : 0}
         points={player?.stats?.points}
         last={player?.stats?.last}
         age={player?.stats?.age}
