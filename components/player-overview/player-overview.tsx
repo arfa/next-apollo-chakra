@@ -13,7 +13,7 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { MdCheckCircle } from '@chakra-ui/icons';
+import { SmallAddIcon } from '@chakra-ui/icons';
 import getUnicodeFlagIcon from 'country-flag-icons/unicode'
 
 
@@ -82,30 +82,38 @@ export const PlayerOverview = ({
           <Text fontWeight={600} color={'gray.500'} size='sm' mb={4}>
             {`${shortName} (${countryCode})`}
           </Text>
+          <Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
+            <Badge
+              px={2}
+              py={1}
+              bg={useColorModeValue('blue.50', 'blue.800')}
+              fontWeight={'400'}>
+              {`${rank}th`}
+            </Badge>
+            <Badge
+              px={2}
+              py={1}
+              bg={useColorModeValue('blue.50', 'blue.800')}
+              fontWeight={'400'}>
+              {`${points} points`}
+            </Badge>
+          </Stack>
           <List spacing={3}>
             <ListItem>
-              <ListIcon as={MdCheckCircle} color='green.500' />
+              <ListIcon as={SmallAddIcon} color='green.500' />
               {sex}
             </ListItem>
             <ListItem>
-              <ListIcon as={MdCheckCircle} color='green.500' />
+              <ListIcon as={SmallAddIcon} color='green.500' />
               {`${age} years old`}
             </ListItem>
             <ListItem>
-              <ListIcon as={MdCheckCircle} color='green.500' />
+              <ListIcon as={SmallAddIcon} color='green.500' />
               {`${height} cm`}
             </ListItem>
             <ListItem>
-              <ListIcon as={MdCheckCircle} color='green.500' />
-              {`${weight} kg`}
-            </ListItem>
-            <ListItem>
-              <ListIcon as={MdCheckCircle} color='green.500' />
-              {`${points} points`}
-            </ListItem>
-            <ListItem>
-              <ListIcon as={MdCheckCircle} color='green.500' />
-              {`${rank}th`}
+              <ListIcon as={SmallAddIcon} color='green.500' />
+              {`${weight/1000} kg`}
             </ListItem>
           </List>
         </Stack>
