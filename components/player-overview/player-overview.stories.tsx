@@ -24,7 +24,7 @@ Primary.args = {
   countryUrl: 'http://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg',
   countryCode: 'FR',
   picture: 'https://picsum.photos/200/300',
-  sexe: 'M',
+  sex: 'M',
   shortName: 'JD',
   rank: 1,
   age: 20,
