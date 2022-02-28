@@ -1,3 +1,6 @@
+# [DEMO APP](https://next-apollo-chakra.vercel.app/)
+# [Storybook](https://621c9fefe60971003abe72b5-jzjexctgxc.chromatic.com/?path=/story/example-playeroverview--primary)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
