@@ -1,11 +1,9 @@
 import {
   Badge,
-  Button,
   Center,
   Flex,
   Heading,
   Image,
-  Link,
   List,
   ListIcon,
   ListItem,
@@ -14,8 +12,6 @@ import {
   StatArrow,
   StatGroup,
   StatHelpText,
-  StatLabel,
-  StatNumber,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';

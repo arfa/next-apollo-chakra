@@ -33,7 +33,6 @@ const ATHELETE_LIST = gql`
 
 export const PlayerOverviewContainer = () => {
   const { loading, error, data } = useQuery(ATHELETE_LIST);
-  console.log('data: ', data);
   const playerList = data?.headToHead || [];
 
   if (loading) return <p>Loading...</p>;
