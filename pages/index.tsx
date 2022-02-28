@@ -1,41 +1,13 @@
-import { useQuery, gql } from '@apollo/client';
-import { Button } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import { PlayerOverview } from '../components/player-overview/player-overview';
 import styles from '../styles/Home.module.css';
+import { PlayerOverviewContainer } from './containers/player-overvieaw-container';
 
-const ATHELETE_LIST = gql`
-  query GetAtheleteList {
-    headToHead {
-      firstname
-      lastname
-      shortname
-      sex
-      picture {
-        url
-      }
-      country {
-        picture {
-          url
-        }
-        code
-      }
-      stats {
-        rank
-        points
-        weight
-        height
-        age
-        last
-      }
-    }
-  }
-`;
+
 
 const Home: NextPage = () => {
-  const { loading, error, data } = useQuery(ATHELETE_LIST);
-  console.log('data: ', data);
 
   return (
     <div className={styles.container}>
@@ -50,10 +22,7 @@ const Home: NextPage = () => {
           Welcome to <a href='https://nextjs.org'>Next.js!</a>
         </h1>
 
-        <p className={styles.description}>
-          Get started by editing <code className={styles.code}>pages/index.tsx</code>
-          <Button colorScheme='blue'>Button</Button>
-        </p>
+        <PlayerOverviewContainer/>
 
         <div className={styles.grid}>
           <a href='https://nextjs.org/docs' className={styles.card}>
